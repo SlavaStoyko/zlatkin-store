@@ -1,0 +1,26 @@
+.galary {
+
+    &_cardBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__card {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    &__item {
+    }
+}
+.catd {
+}
+.card {
+
+    &_item {
+    }
+}
+.cardBlock {
+}

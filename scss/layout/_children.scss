@@ -1,0 +1,65 @@
+.Children {
+& .galary{
+ 
+    &__item{
+      justify-items: center;
+    }
+  
+}
+  & .galary_cardBlock__slide img{
+   object-fit: fill;
+    height: 600px;
+    border-radius: 25px;
+  }
+  & .info {
+    background-color: inherit;
+    color: #fff;
+
+    .detsils {
+        &__list {
+          & P{
+            text-align: center;
+          }
+      }
+
+      &__title {
+        text-transform: uppercase;
+        text-align: center;
+      }
+    }
+
+    & .wight,
+    & .power,
+    & .special {
+      & h3 {
+        color: orange;
+        text-align: center;
+      }
+      & table {
+        width: 100%;
+        border-collapse: collapse;
+        & tr:nth-child(even) * {
+          background-color: rgb(136, 135, 135);
+        }
+        & tr:nth-child(odd) * {
+          background-color: rgb(156, 156, 156);
+        }
+
+        & tr * {
+          padding: 5px 25px;
+        }
+        & th {
+          text-align: left;
+        }
+        & td {
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 760px) {
+  .swiper-button-prev,.swiper-button-next{
+    display: none;
+  }
+}

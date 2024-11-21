@@ -1,0 +1,27 @@
+footer{
+    padding: 25px 0;
+    background-color: rgba(255, 255, 255, 0.2549019608);
+    margin: 0;
+    
+& .info {
+
+		&__contacts {
+            & .contact {
+            &__list {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+            }
+        }
+		}
+}
+
+}
+footer *{
+    margin: 0;
+}
+address ul li{
+    padding-bottom: 15px;
+}

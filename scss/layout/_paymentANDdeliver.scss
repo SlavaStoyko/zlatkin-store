@@ -1,0 +1,44 @@
+
+.paymentANDdeliver {
+    color: rgb(46, 55, 67);
+    border-radius: 25px;
+    & .container{
+    background-color: #ffffff;
+
+}
+& .galary {
+
+		&_cardBlock {
+            justify-content: center;
+            gap: 15px;
+            flex-direction: row;
+            @media screen and (max-width:780px) {
+                flex-wrap: wrap;
+                & .orderDeliver{
+                    order:2
+                }
+            }
+            & p{
+                color: rgb(46, 55, 67);
+                max-width: 280px;
+                text-align: center;
+            }
+            
+		}
+
+		&__card {
+            flex-wrap: wrap;
+		}
+
+		&__item {
+            flex-grow: 1;
+		}
+    }
+.card {
+
+		&_item {
+		}
+}
+.cardBlock {
+}
+}

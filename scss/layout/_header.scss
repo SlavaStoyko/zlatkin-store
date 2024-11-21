@@ -1,0 +1,13 @@
+header{
+    padding: 25px 0;
+    background-color: rgba(255, 255, 255, 0.2549019608);
+    & p{
+        color: white;
+        & span {
+            color: red;
+        }
+    }
+}
+    header{
+        margin: 0;
+    }

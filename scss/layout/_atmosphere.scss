@@ -1,0 +1,42 @@
+
+.atmosphere {
+
+& .galary {
+
+		&_cardBlock {
+            background-color: beige;
+            border-radius: 25px;
+            & img{
+                margin: 0;
+                border-top-left-radius: 25px;
+                border-top-right-radius: 25px;
+            }
+            & h3{
+                margin: 45px 0;
+                color: black;
+            }
+		}
+
+		&__card {
+            flex-wrap: wrap;
+            
+		}
+
+		&__item {
+            flex-basis: calc((100% - 15px) / 2);
+		}
+}
+.card {
+
+		&_item {
+		}
+}
+.cardBlock {
+}
+.info {
+}
+.orderBlock {
+}
+.btnOrder {
+}
+}
