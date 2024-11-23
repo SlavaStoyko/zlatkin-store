@@ -8,5 +8,5 @@ window.onload = () => {
 const inishialUISetup = () =>{
     document.querySelectorAll('.toForm').forEach(item =>item.addEventListener("click", (e)=>getScrollUp(e)));
     swiperBlock('.swiper')
-    SendFormData("URL");
+    SendFormData("../php/form.php");
 }

@@ -2,7 +2,8 @@
 $name = checkData($_POST('name'));
 $phone = checkData($_POST('phone'));
 $countItems = checkData($_POST('countItems'));
-$to = 'my@gmail.com';
+$subject = 'Клієнт магазину';
+$to = 'zlatkin_store@ukr.net';
 $headers = 'Content-type: text/html; charset = utf-8 \r\n';
 $message = '
 <html>
@@ -11,7 +12,7 @@ $message = '
 <table border = "1" cellpadding = "6" cellspacing = "0" width = "90%" bordercolor = "#DBDBDB">
 <tr><th colspan = "2" align = "center" bgcolor = "#E4E4E4">Замовлення з сайту </th></tr>
 <tr>
-    <td>Ім"я </td>
+    <td>Ім*я </td>
     <td >$name</td>
 </tr>
 <tr>
@@ -32,6 +33,6 @@ function checkData ($item) {
     $item = stripslashes ($item);
     $item = htmlspecialchars($item);
 }
-mail($to,  $message, $headers);
+mail($to, $subject $message, $headers);
 ?>
 
