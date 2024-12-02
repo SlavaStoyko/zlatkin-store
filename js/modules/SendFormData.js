@@ -5,7 +5,9 @@
           method:"POST",
           body: Date
         })
-
+        setTimeout(() => {
+          window.location = window.location.origin;
+      }, 3000);
        }
 
       const inputName = document.querySelector("#name");
@@ -33,17 +35,16 @@
         e.preventDefault();
         
        if(inputName.getAttribute('class') === 'valid' && inputPhone.getAttribute('class') === 'valid' && inputMail.getAttribute('class') === 'valid' && statusForm === 0){
-        Data.append("name",inputName.value.trim())
-        Data.append('phone',inputPhone.value.trim())
-        Data.append('countItems',inputMail.value.trim().toLowerCase())
-        
+        Data.append("name",inputName.value.trim());
+        Data.append('phone',inputPhone.value.trim());
+        Data.append('countItems',inputMail.value.trim().toLowerCase());
         sendForm(linkForm,Data);
+        Data.delete('name');
+        Data.delete('phone');
+        Data.delete('countItems');
         resetItem(form);
         document.querySelector("#formOrder").reset();
-        Data.delete('name')
-        Data.delete('phone')
-        Data.delete('mail')
-        massage(`Дякуємо за вибір <span>Beauty Zone</span>`);
+        massage(`Дякуємо за вибір <span>zlatkin-store.com.ua</span>`);
        }else{
         massage(`Заповніть <span>поля форми</span>!`);
         
@@ -94,7 +95,7 @@
       
       function validateName(name) {
         if (name.id === "name") {
-          let RegExpName = /^[а-я,a-z\s\-.']+$/i; ///[+_/)(*&^%$#@!~}{":><?,.|`~]/g;
+          let RegExpName = /^[і,ї,а-я,a-z\s\-.']+$/i; ///[+_/)(*&^%$#@!~}{":><?,.|`~]/g;
           if (name.value === "") {
             inValidField(name);
             statusForm++;
@@ -142,7 +143,7 @@
             massage(`Поле <span>кількість товару </span> не 
               може бути порожнім!`);
       
-          } else if (!RegExpName.test(mail.value)) {
+          } else if (!RegExpName.test(mail.value) || mail.value < 0 ||  mail.value > 24) {
             inValidField(mail);
             statusForm++;
             massage(`Поле <span>кількість товару <span>некоректні символи</span>!`);
@@ -156,79 +157,4 @@
     
     
     export default SendFormData;
-    /* const form = document.querySelector(".form");
-    const inputFields = form.getElementsByClassName("form-control");
-    
-    for (const item of inputFields) {
-      item.addEventListener("blur", (event) => {
-        validateForm(event);
-      });
-    }
-    
-    const setError = (element, message) => {
-      const errorSection = element.parentElement.querySelector(".error");
-      errorSection.innerText = message;
-      element.classList.add("invalid");
-      element.classList.remove("valid");
-    };
-    
-    const setValid = (element) => {
-      const errorSection = element.parentElement.querySelector(".error");
-      errorSection.innerText = "";
-      element.classList.remove("invalid");
-      element.classList.add("valid");
-    };
-    
-    const validateEmail = (email) => {
-      const regex = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
-    
-      if (email.value === "") {
-        setError(email, "Email is required");
-      } else if (!regex.test(email.value)) {
-        setError(email, "Email is incorrect");
-      } else {
-        setValid(email);
-      }
-    };
-    
-    const validatePassword = (password) => {
-      const regex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
-    
-      if (password.value === "") {
-        setError(password, "Password is required");
-      } else if (!regex.test(password.value)) {
-        setError(
-          password,
-          "Password must contain at least 8 symbols, one digit and one special character"
-        );
-      } else {
-        setValid(password);
-      }
-    };
-    
-    const validatePasswordConfirm = (passwordConfirm) => {
-      if (passwordConfirm.value === "") {
-        setError(passwordConfirm, "Confirmation password is required");
-      } else if (passwordConfirm.value !== password.value) {
-        setError(passwordConfirm, "Password doesn't match!");
-      } else {
-        setValid(passwordConfirm);
-      }
-    };
-    
-    const validateForm = (event) => {
-      switch (event.target.id) {
-        case "email":
-          validateEmail(event.target);
-          break;
-        case "password":
-          validatePassword(event.target);
-          break;
-        case "passwordConfirm":
-          validatePasswordConfirm(event.target);
-          break;
-        default:
-          alert("Validation error!");
-      }
-    }; */
     
